@@ -90,6 +90,36 @@ query = '''INSERT INTO promotions(id, name) VALUES (1, "Кардио"),
 '''
 cur.execute(query)
 
+query = '''
+    CREATE TABLE training_types (
+        id INT PRYMARY KEY,
+        first_name VARCHAR(100),
+        middle_name VARCHAR(100),
+        last_name VARCHAR(100),
+        birthday DATE,
+        phone_number VARCHAR(100),
+        email VARCHAR(100),
+        gender_id INT,
+        subscription_id INT,
+    );
+'''
+cur.execute(query)
+
+query = '''INSERT INTO promotions(id, name) VALUES (1, "Кардио"),
+    (1, "Силовая"),
+    (1, "Жиросжигающая"),
+    (1, "Аэробные"),
+    (1, "Анаэробные"),
+    (1, "Круговые"),
+    (1, "Интервальные"),
+    (1, "Сплит"),
+    (1, "Йога"),
+    (1, "Шейпинг"),
+    (1, "Калланетика"),
+    (1, "Bodyart");
+'''
+cur.execute(query)
+
 print(cur.fetchall())
 
 con.commit()
